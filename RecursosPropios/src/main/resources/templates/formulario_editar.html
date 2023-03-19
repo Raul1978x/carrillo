@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carga formulario</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="/js/cargarDatos.js"></script>
+    <link rel="stylesheet" href="/css/estilo.css" />
+  </head>
+
+  <body class="bg-dark">
+    <header class="container-fluid p-3 bg-carrillo ps-5">
+      <img
+        src="/img/carrillo logo.jpg"
+        alt=""
+        width="50rem"
+        class="d-flex float-start"
+      />
+      <h1>HOSPITAL CARRILLO</h1>
+    </header>
+    <div class="container bg-carrillo text-dark rounded my-3 h5">
+      <h1 class="py-3">Modificación de Datos de Atención</h1>
+      <form
+        class="row g-3 needs-validation"
+        method="post"
+        th:action="@{/modifica/__${paciente.id}__}"
+      >
+        <div class="col-md-2">
+          <label for="numOrden">Número de orden:</label>
+          <input
+            th:value="${paciente.numOrden}"
+            type="number"
+            id="numOrden"
+            name="numOrden"
+            class="form-control"
+          /><br /><br />
+        </div>
+
+        <div class="col-md-5">
+          <label for="nombre">Nombre:</label>
+          <input
+            th:value="${paciente.nombre}"
+            type="text"
+            id="nombre"
+            name="nombre"
+            class="form-control"
+          /><br /><br />
+        </div>
+
+        <div class="col-md-5">
+          <label for="apellido">Apellido:</label>
+          <input
+            th:value="${paciente.apellido}"
+            type="text"
+            id="apellido"
+            name="apellido"
+            class="form-control"
+          /><br /><br />
+        </div>
+
+        <div class="col-md-4">
+          <label for="cantidad">Cantidad de prácticas realizadas:</label>
+          <input
+            th:value="${paciente.cantidad}"
+            type="number"
+            id="cantidad"
+            name="cantidad"
+            class="form-control"
+          /><br /><br />
+        </div>
+        <div class="col-md-4">
+          <label for="codigo">Código de la práctica:</label>
+          <input
+            th:value="${paciente.codigo}"
+            type="text"
+            id="codigo"
+            name="codigo"
+            class="form-control"
+          /><br /><br />
+        </div>
+
+        <div class="col-md-4">
+          <label for="precio">Valor de la práctica:</label>
+          <input
+            th:value="${paciente.precio}"
+            type="text"
+            id="precio"
+            name="precio"
+            readonly
+            value="1330"
+            class="form-control"
+          /><br /><br />
+        </div>
+
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-dark d-flex float-end m-3">
+            ACTUALIZAR
+          </button>
+
+          <a
+            th:href="@{/listado}"
+            type="button"
+            class="btn btn-dark d-flex float-start m-3"
+            >MOSTRAR LISTA</a
+          >
+        </div>
+      </form>
+    </div>
+    <footer class="container-fluid p-5 bg-carrillo text-center">
+      <h6>©️ 2023 - RAUL GOMEZ - TODOS LOS DERECHOS RESERVADOS</h6>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

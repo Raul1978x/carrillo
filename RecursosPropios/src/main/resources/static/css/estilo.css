@@ -1,0 +1,14 @@
+.bg-carrillo {
+  background-color: rgb(192, 243, 116);
+}
+.bg-carrillo2 {
+  background-color: #ff7314;
+}
+:hover .btn-carrillo {
+  background-color: rgb(192, 243, 116);
+}
+.table-carrillo {
+  /* background-color: rgb(192, 243, 116); */
+  background-color: #f3ece8;
+  color: black;
+}
